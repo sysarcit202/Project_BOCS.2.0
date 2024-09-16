@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content=""> 
+    <title>{{ title }}</title>
+
+    <!-- REFERENCES -->
+    <link rel="stylesheet" href="{% static 'assets/css/login_style.css' %}">  
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+    <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+</head>
+<body>
+    {% for message in messages  %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="submit" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+    {% endfor %}
+    
+    <header class="header">
+        <div>
+            <img src="{% static 'assets/img/NCH Logo.png' %}" class="img_nch">
+        </div>
+        <div class="typog1">
+            <p>NATIONAL CHILDREN'S HOSPITAL</p>
+            <h1>BLOOD BANK OPERATION<br>CYBER SYSTEM</h1>
+        </div>
+        <div>
+            <img src="{% static 'assets/img/BOCS Logo.png' %}" class="img_bocs">
+        </div>
+    </header>
+    <div class="main">
+        <section class="form1">
+            <form action="/dashboard/" method="post">
+            {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="input" id="username" placeholder="Username/Email" required><br>
+                    <!-- <label for="username" class="placeholder">Username/Email</label> -->
+
+                    <input type="password" class="input" id="password" placeholder="Password" required><br><br>
+                    <!-- <label for="password" class="placeholder">Password</label> -->
+                </div>
+                <a href="/reset" id="reset" class="codered">Forgot Password?</a>
+                <input type="submit" id="dashboard" value="LOG IN"><br>
+                <a href="/signup">
+                    <input type="button" id="signup" value="CREATE ACCOUNT">
+                </a>
+            </form>
+        </section>
+        <section class="greeting">
+            <div class="typog2">
+                <h1>WELCOME!</h1>
+                <h5>TO</h5>
+            </div>
+            <div class="subclass">
+                <img src="{% static 'assets/img/BOCS Logo1.png' %}" class="img_bocsinvrt">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

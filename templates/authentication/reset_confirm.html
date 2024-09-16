@@ -1,0 +1,27 @@
+{% extends "reset_email.html" %}
+
+{% block title %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="left-side">
+        <h2>Forgot Password?</h2>
+        <form action="" class="form1">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" class="input">
+                <label class="placeholder">Verification Code</label>
+                <input type="submit" value="Verify Code">
+            </div>
+        </form>
+        <img src="assests/img/NCH Logo.png" class="img_nch">
+    </section>
+    <section class="right-side">
+        <div>
+            <img src="assests/img/BOCS Logo.png" alt="BOCS Logo">
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content=""> 
+    <title>{{ title }}</title>
+    
+    <!-- REFERENCES -->
+    <link rel="stylesheet" href="{% static 'assets/css/signup_style.css' %}">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+    <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+</head>
+<body>
+    <div class="container">
+        <section class="left-side">
+            <h1>CREATE ACCOUNT</h1>
+            <form action="/signup" class="form1" method="post">
+            {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="input" id="UempId">
+                    <label class="placeholder" for="UempId">Employee ID</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="Uname">
+                    <label class="placeholder" for="Uname">Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="Uemail">
+                    <label class="placeholder" for="Uemail">Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="UjRole">
+                    <label class="placeholder" for="UjRole">Job Role</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="UidNum">
+                    <label class="placeholder" for="UidNum">ID Number</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="Upass">
+                    <label class="placeholder" for="Upass">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="UrPass">
+                    <label class="placeholder" for="UrPass">Password Verification</label>
+                </div>
+                <input type="submit" value="SUBMIT">
+            </form>
+            <img src="{% static 'assets/img/NCH Logo.png' %}" class="img_nch">
+        </section>
+        <section class="right-side">
+            <div>
+                <img src="{% static 'assets/img/BOCS Logo.png' %}" alt="BOCS Logo">
+            </div>
+        </section>
+    </div>
+</body>
+</html>
