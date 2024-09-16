@@ -11,8 +11,6 @@ from django.utils.encoding import force_bytes, force_str
 from . tokens import generate_token
 from django.core.mail import EmailMessage, send_mail
 
-
-
 # from rest_framework.decorators import api_view
 # from rest_framework.response import Response
 # from rest_framework import status
