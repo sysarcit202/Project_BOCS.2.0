@@ -141,6 +141,7 @@ input[type=password] {
     border-radius: 4px;
     transition: all 1s;
 }
+
 input[type=submit],
 input[type=button] {
     width: 100%;
