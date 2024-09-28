@@ -21,4 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentication.urls')),
     path('dashboard/', include('dashboard.urls')),
+    path('inventory/', include('inventory.urls')),
+    path('colndistrib/', include('colndistrib.urls')),
+    path('transcription/', include('transcription.urls')),
+    path('reservation/', include('reservation.urls')),
+    path('sumrep/', include('sumrep.urls')),
 ]

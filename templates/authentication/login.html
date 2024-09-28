@@ -17,15 +17,6 @@
     <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
 </head>
 <body>
-    {% for message in messages  %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message:</strong> {{ message }}
-        <button type="submit" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-    {% endfor %}
-    
     <header class="header">
         <div>
             <img src="{% static 'assets/img/NCH Logo.png' %}" class="img_nch">
@@ -39,8 +30,9 @@
         </div>
     </header>
     <div class="main">
+
         <section class="form1">
-            <form action="/dashboard/" method="post">
+            <form action="{% url "dashboard" %}" method="post">
             {% csrf_token %}
                 <div class="input-group">
                     <input type="text" class="input" id="username" placeholder="Username/Email" required><br>
@@ -65,6 +57,14 @@
                 <img src="{% static 'assets/img/BOCS Logo1.png' %}" class="img_bocsinvrt">
             </div>
         </section>
+    <!-- {% for message in messages  %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="submit" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %} -->
     </div>
 </body>
 </html>

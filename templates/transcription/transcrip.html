@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient`s Transcription of Record</title>
+    <link rel="stylesheet" href="{% static 'assets/css/patient_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ </head>
+<body>
+    <img src="assests/img/NCH Logo.png" class="img_nch">
+    <nav>
+        <label class="logo"><a href=""><img src="{%static 'assets/img/BOCS Logo.png' %}"></a></label>
+        <ul>
+            <li><a href="{% url "inventory" %}">Inventory</a></li>
+            <li><a href="#">Collection & Distribution</a></li>
+            <li><a href="{% url "reservation" %}">Reservation</a></li>
+            <li><a href="{% url "patient" %} ">Transcription Record</a></li>
+            <li><a href="#">Summary Report</a></li>
+            <a href="{% url "signout" %}"><button type="submit" class="btn">Logout</button></a>
+            {% comment %} <li><a href="#" class="icon-unknown"><i class="fas fa-question-circle"></i></a></li> {% endcomment %}
+        </ul>
+    </nav> 
+    <div class="container">
+        <h1>Patient`s Transcription of Record</h1>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient's Name</th>
+                    <th>Donor Quantity</th>
+                    <th>RBC</th>
+                    <th>Platelets</th>
+                    <th>Plasma</th>
+                    <th>Collection Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gabriel Duran</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>03/12/24</td>
+                    <td>RBC - 2 - 03/12/24 <br>Platelets - 19 - 03/15/24</td>
+                </tr>
+                <tr>
+                    <td>Arwyn Tablizo</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>03/05/24</td>
+                    <td>Stock</td>
+                </tr>
+                <tr>
+                    <td>Louis Jusasyan</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>03/25/24</td>
+                    <td>Stock</td>
+                </tr>
+                <tr>
+                    <td>Kian Bautista</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>04/01/24</td>
+                    <td>Platelets - 2 - 04/05/24</td>
+                </tr>
+                <tr>
+                    <td>Jericho Malupiton</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>04/18/24</td>
+                    <td>RBC - 1 - 04/19/24</td>
+                </tr>
+                <tr>
+                    <td>Cornelio Gatbonton</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>04/11/24</td>
+                    <td>Stock</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

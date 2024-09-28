@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content=""> 
+    <title>TryWithMe | BOCS - Patient</title>
+
+    <!-- REFERENCES -->
+    <link rel="stylesheet" href="assests/css/patient_style.css">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+    <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+
+    <script src={% static 'assests/js/dashboard.js' %}  defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="dashboard.html">
+                <img src="assests/img/BOCS Logo Banner.png" class="img_bocs">
+            </a>
+            <ul class="links">
+                <li class="link">
+                    <a href="inventory.html" class="link-item">Inventory</a>
+                </li>
+                <li class="link">
+                    <a href="colndistrib.html" class="link-item">Collect & Distribution</a>
+                </li>
+                <li class="link">
+                    <a href="reservation.html" class="link-item">Reservation</a>
+                </li>
+                <li class="link">
+                    <a href="transcription.html" class="link-item">Transcription Record</a>
+                </li>
+                <li class="link">
+                    <a href="sumrep.html" class="link-item">Summary Report</a>
+                </li>
+            </ul>
+            <img src="assests/img/user.jpg" class="img_user menuBar" onclick="toggleMenu()">
+        </nav>
+    </header>
+    <section class="mini-nav">
+        <nav class="nav2">
+            <a href="reservation.html"  class="icon-link img_backIcon">
+                <img src="assests/img/arrow_back.png">
+            </a>
+            <h1 class="title">
+                PATIENT
+            </h1>
+            <a href=""  class="icon-link img_changeIcon">
+                <img src="assests/img/change_circle.png">
+            </a>
+            <a href="dashboard.html" class="icon-link img_homeIcon">
+                <img src="assests/img/home.png">
+            </a>
+        </nav>
+    </section>
+    <main class="main">
+        <img src="assests/img/NCH Logo.png" class="img_nch">
+
+        <section class="sub_wrap hide" id="toggleMenu" >
+            <div class="sub" id="menu">
+                <button type="submit" class="close" onclick="toggleMenu()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- <img src="assests/img/close.png" class=""> -->
+                <div class="user_info">
+                    <img src="assests/img/user.jpg" class="img_user--">
+                    <h2>Doe, John Micheal V.<hr></h2>
+                    <p>MedTech</p>
+                    <p>123456789</p>
+                    <hr>
+                    <a href="update.html">
+                        <button type="button" class="update_btn"><span><img src="assests/img/edit_square.png" class="icon"></span>Update Profile</button>
+                    </a>
+                    <a href="login.html">
+                        <button type="button" class="logout_btn"><span><img src="assests/img/logout.png" class="icon"></span>Log Out</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <form action="" class="form1" method="post">
+            <div class="input-group">
+                <input type="text" class="input" id="P Name">
+                <label class="placeholder" for="P Name">Patient Name</label>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" id="P Age">
+                <label class="placeholder" for="P Age">Patient Age</label>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" id="PB Date">
+                <label class="placeholder" for="PB Date">Patient BirthDate</label>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" id="B Type">
+                <label class="placeholder" for="B Type">Blood Type</label>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input" id="Ward">
+                <label class="placeholder" for="Ward">Ward</label>
+            </div>
+            <input type="submit" value="SUBMIT">
+        </form>
+    </main>
+</body>
+</html>

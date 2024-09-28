@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+from .info import *
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+APPEND_SLASH = True
+
 
 # Application definition
 
@@ -42,6 +45,10 @@ INSTALLED_APPS = [
     # 'rest_framework',
     'authentication',
     'dashboard',
+    'inventory',
+    'colndistrib',
+    'transcription',
+    'sumrep',
 ]
 
 MIDDLEWARE = [
@@ -75,15 +82,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'main.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'accountdb',
+        'USER': 'root',
+        'PASSWORD': 'BOCScapsys22@#12345',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
+
+
+# Authentication backends
+# This specifies which backends Django should use to authenticate users.
+# The custom email backend is added for email login and ModelBackend remains for normal username authentication.
+#AUTHENTICATION_BACKENDS = [
+#    'django.contrib.auth.backends.ModelBackend',  # Keep Django's default backend for normal authentication
+#    'authentication.backends.EmailAuthBackend',  # Custom backend for email authentication
+#]
 
 
 # Password validation
@@ -120,23 +141,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# -- Other way to Get staticfiles
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-#     # You can add more directories here if needed
-# ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'markjohnkilapkilap1@gmail.com'  # Replace with your Gmail address
-EMAIL_HOST_PASSWORD = 'rhas goyw ssft cswy'  # Replace with your Gmail password

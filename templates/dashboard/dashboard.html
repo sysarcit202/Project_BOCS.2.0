@@ -7,72 +7,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content=""> 
-    <title>{{ title }}</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!-- REFERENCES -->
-    <link rel="stylesheet" href="{% static 'assets/css/dashboard_style.css' %}">  
+    <link rel="stylesheet" href="{% static 'assets/css/dashboard_style.css' %}">
 
     <!-- FAVICONS -->
     <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
     <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+
+    <script src="{% static 'assets/js/dashboard.js' %}"  defer></script>
 </head>
 <body>
-    {% for message in messages  %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message:</strong> {{ message }}
-        <button type="submit" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-    {% endfor %}
-
-    {% if user.is_authenticated %}
-        <header class="header">
-            <nav class="nav">
-                <a href="#"><img src="{% static 'assets/img/BOCS Logo.png' %}" class="img_bocs"></a>
-                
-                <input type="checkbox" id="sidebar-active">
-                <label for="sidebar-active" class="open-sidebar-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-                </label>
-
-                <div class="links-container">
-                    <label for="sidebar-active" class="close-sidebar-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-                    </label>
-
-                    <a href="#" class="link-item">Inventory</a>
-                    <a href="#" class="link-item">Collect & Distribution</a>
-                    <a href="#" class="link-item">Reservation</a>
-                    <a href="#" class="link-item">Transcription Record</a>
-                    <a href="#" class="link-item">Summary Report</a>
-                    <a href="{% url 'signout' %}"><button type="submit">Logout</button></a>
+    <header class="header">
+        <nav class="nav">
+            <a href= "/dashboard">
+                <img src="{% static 'assets/img/BOCS Logo Banner.png' %}" class="img_bocs">
+            </a>
+            <ul class="links">
+                <li class="link">
+                    <a href="{% url "inventory" %}" class="link-item">Inventory</a>
+                </li>
+                <li class="link">
+                    <a href="{% url "colndistrib" %}" class="link-item">Collect & Distribution</a>
+                </li>
+                <li class="link">
+                    <a href="{% url "reservation" %}" class="link-item">Reservation</a>
+                </li>
+                <li class="link">
+                    <a href="{% url "transcription" %}" class="link-item">Transcription Record</a>
+                </li>
+                <li class="link">
+                    <a href="{% url "sumrep" %}" class="link-item">Summary Report</a>
+                </li>
+            </ul>
+            <img src="{% static 'assets/img/user.jpg' %}" class="img_user menuBar" onclick="toggleMenu()">
+        </nav>
+    </header>
+    <main class="main">
+        <img src=" {% static "assets/img/NCH Logo.png" %}" class="img_nch">
+        <section class="sub_wrap hide" id="toggleMenu" >
+            <div class="sub" id="menu">
+                <button type="submit" class="close" onclick="toggleMenu()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- <img src="assests/img/close.png" class=""> -->
+                <div class="user_info">
+                    <img src="{% static 'assets/img/user.jpg' %}" class="img_user--">
+                    <h2>Doe, John Micheal V.<hr></h2>
+                    <p>MedTech</p>
+                    <p>123456789</p>
+                    <hr>
+                    <a href="update.html">
+                        <button type="button" class="update_btn"><span><img src="{% static 'assets/img/edit_square.png' %}" class="icon"></span>Update Profile</button>
+                    </a>
+                    <a href="{% url "signout" %}">
+                        <button type="button" class="logout_btn"><span><img src="{% static 'assets/img/logout.png' %}" class="icon"></span>Log Out</button>
+                    </a>
                 </div>
-            </nav>
-        </header>
-
-        <div class="main">
-            {% block content %}
-                <h3>Hello, {{ name }} </h3>              
-            {% endblock %}
-
-            <!-- <section class="form1">
-
-            </section>
-            <section class="greeting">
-                <div class="typog2">
-                    <h1>WELCOME!</h1>
-                    <h5>TO</h5>
-                </div>
-                <div class="subclass">
-                    <img src="BOCS Logo1.png" class="img_bocsinvrt">
-                </div>
-            </section> -->
-        </div>
-    {% else %}
-    <a href="/"><button type="submit">Logout</button></a>
-    {% endif %}
-    
-    <script src="" async defer></script>
+            </div>
+        </section>
+        <section class="greeting">
+            <div>
+                <img src="{% static "assets/img/BloodDrop Logo.png" %}" class="img_blood">
+            </div>
+            <div class="typog1">
+                <p>Hi, John Micheal V. Doe!</p>
+            </div>
+            <div class="typog2">
+                <h1>Welcome to</h1>
+                <h1>Blood Bank Operation Cyber System</h1>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

@@ -7,4 +7,8 @@ def dashboard(request):
     }
     return render(request, 'dashboard/dashboard.html', context)
 
-
+def update(request):
+    context = {
+        'title': 'Project_BOCS | Update'
+    }
+    return render(request, 'dashboard/dashboard.html', context)

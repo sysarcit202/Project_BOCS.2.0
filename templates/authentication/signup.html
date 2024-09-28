@@ -20,34 +20,34 @@
     <div class="container">
         <section class="left-side">
             <h1>CREATE ACCOUNT</h1>
-            <form action="/signup" class="form1" method="post">
+            <form action="{% url 'signup' %}" class="form1" method="post">
             {% csrf_token %}
                 <div class="input-group">
-                    <input type="text" class="input" id="UempId">
+                    <input type="text" class="input" id="UempId" name="UempId" required>
                     <label class="placeholder" for="UempId">Employee ID</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="input" id="Uname">
+                    <input type="text" class="input" id="Uname" name="Uname" required>
                     <label class="placeholder" for="Uname">Full Name</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="input" id="Uemail">
+                    <input type="email" class="input" id="Uemail" name="Uemail" required>
                     <label class="placeholder" for="Uemail">Email Address</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="input" id="UjRole">
+                    <input type="text" class="input" id="UjRole" name="UjRole" required>
                     <label class="placeholder" for="UjRole">Job Role</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="input" id="UidNum">
+                    <input type="text" class="input" id="UidNum" name="UidNum" required>
                     <label class="placeholder" for="UidNum">ID Number</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="input" id="Upass">
+                    <input type="password" class="input" id="Upass" name="Upass" required>
                     <label class="placeholder" for="Upass">Password</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="input" id="UrPass">
+                    <input type="password" class="input" id="UrPass" name="UrPass" required>
                     <label class="placeholder" for="UrPass">Password Verification</label>
                 </div>
                 <input type="submit" value="SUBMIT">
