@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content=""> 
-    <title>{{ title }}</title>
+    <title>Project_BOCS |</title>
 
     <!-- REFERENCES -->
     <link rel="stylesheet" href="{% static 'assets/css/login_style.css' %}">  
@@ -32,7 +32,7 @@
     <div class="main">
 
         <section class="form1">
-            <form action="{% url "dashboard" %}" method="post">
+            <form action="{% url 'dashboard' %}" method="post">
             {% csrf_token %}
                 <div class="input-group">
                     <input type="text" class="input" id="username" placeholder="Username/Email" required><br>

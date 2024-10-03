@@ -3,12 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 def dashboard(request):
     context = {
-        'title': 'Project_BOCS | Dashboard'
+        'title': 'Dashboard'
     }
     return render(request, 'dashboard/dashboard.html', context)
 
 def update(request):
     context = {
-        'title': 'Project_BOCS | Update'
+        'title': 'Update'
     }
-    return render(request, 'dashboard/dashboard.html', context)
+    return render(request, 'dashboard/update.html', context)

@@ -8,6 +8,7 @@ body{
     width: 100vw;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 /* HEADER */
@@ -121,12 +122,11 @@ nav ul li a:hover::after{
 
 .img_nch {
     position: absolute;
-    top: 12rem;   
+    top: 12rem;
     z-index: 0;
     opacity: .5;
     filter: blur(5px);
 }
-
 
 section{
     z-index: 1;
@@ -349,35 +349,6 @@ hr{
     color: var(--clr-darkest);
     background: var(--clr-light);
 }
-
-.input-group input[type="date"] {
-    width: 360px;
-    height: 60px;
-    font-size: 16px;
-    color: var(--clr-darkest);
-    padding: 0 15px;
-    background: transparent;
-    border: 1.6px solid var(--clr-darkest);
-    outline: none;
-    border-radius: 5px;
-}
-
-.input-group input[type="date"] + label {
-    top: 0; /* Keep label fixed at the top */
-    font-size: 14px;
-    color: var(--clr-darkest);
-    background: var(--clr-light);
-    padding: 0 5px;
-}
-
-.input-group input[type="date"]:focus + label,
-.input-group input[type="date"]:valid + label {
-    top: 0;
-    font-size: 14px;
-    color: var(--clr-darkest);
-    background: var(--clr-light);
-}
-
 
 input[type=submit],
 input[type=button] {

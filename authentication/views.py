@@ -13,9 +13,14 @@ from .tokens import generate_token
 from .models import User
 from django.shortcuts import render
 
-def home(request):
-    context = {'title': 'Project_BOCS'}
+from django.contrib.auth.views import (
+    PasswordResetView,
+    PasswordResetDoneView,
+    PasswordResetConfirmView,
+    PasswordResetCompleteView
+)
 
+def home(request):
     if request.method == 'POST':
         username = request.POST['username']
         pass1 = request.POST['password']
@@ -30,13 +35,13 @@ def home(request):
             messages.error(request, "Bad Credentials!")
             return redirect('home')
 
-    return render(request, 'authentication/login.html', context)
+    return render(request, 'authentication/login.html')
 
 def home(request):
     return render(request, 'authentication/login.html')
 
 def signup(request):
-    context = {'title': 'Project_BOCS | Signup'}
+    context = {'title': 'Signup'}
 
     if request.method == 'POST':
         uemp_id = request.POST.get('UempId', None)
@@ -143,8 +148,22 @@ def insertuser(request):
     return render(request, 'authentication/login.html', {})
 
 def reset(request):
-    context = {'title': 'Project_BOCS | Forgot Password'}
+    context = {'title': 'Forgot Password'}
     return render(request, 'authentication/reset_email.html', context)
+
+    
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'accounts/password_reset.html'
+    email_template_name = 'accounts/password_reset_email.html'
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'accounts/password_reset_done.html'
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'accounts/password_reset_confirm.html'
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'accounts/password_reset_complete.html'
 
 def signout(request):
     logout(request)

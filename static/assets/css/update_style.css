@@ -1,0 +1,223 @@
+@import url('main.css');
+
+/* GENERAL */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ff-primary);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--clr-light);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 9;
+}
+
+.nav {
+    height: 100%;
+    padding: .5rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.img_bocs {
+    height: 5vw;
+    padding: 5px 2px;
+}
+
+.img_nch {
+    position: absolute;
+    top: 12rem;
+    z-index: 0;
+    opacity: .5;
+    filter: blur(5px);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-darkest);
+    color: var(--clr-light);
+}
+
+.container {
+    z-index: 2;
+}
+
+.form1 {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--clr-light);
+    color: var(--clr-darkest);
+    box-shadow: var(--bs1);
+    border-radius: 10px;
+}
+
+.input-group1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    position: relative;
+    margin: 15px 10px;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--clr-darkest);
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group .input {
+    width: 100vw;
+    max-width: 350px;
+    height: 50px;
+    font-size: 16px;
+    color: var(--clr-darkest);
+    padding: 0 15px;
+    background: transparent;
+    border: 1.6px solid var(--clr-darkest);
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group input:focus + label {
+    top: -1px;
+    color: #000249;
+    background-color: transparent;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 14px;
+    color: var(--clr-darkest);
+    background: var(--clr-light);
+}
+
+.img_user {
+    height: 6vw;
+    width: 6vw;
+    align-self: center;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--clr-darkest);
+    margin: 15px;
+    z-index: 2;
+}
+
+.input-group input[type="file"] {
+    color: var(--clr-darkest);
+    padding: 0 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group .placeholder1 {
+    display: block;
+    left: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=submit],
+input[type=button] {
+    width: 100%;
+    height: 1rem + 1vw;
+    background-color: #4CAF50;
+    color: var(--clr-light);
+    font-weight: var(--fw-med);
+    text-align: center;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+    background-color: #3b813d;
+}
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Style the label for the file input */
+.placeholder1 {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Hover effect for the label */
+.placeholder1:hover {
+    background-color: #45a049;
+}
+
+/* Style for input group */
+.input-group1 {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the file name display */
+.file-name {
+    margin-left: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.input-group select {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    color: var(--clr-darkest);
+    padding: 0 15px;
+    background: transparent;
+    border: 1.6px solid var(--clr-darkest);
+    outline: none;
+    border-radius: 5px;
+    appearance: none;
+    /* Optional: remove default browser styling for dropdown */
+}
+
+.input-group select:focus+label,
+.input-group select:valid+label {
+    top: 0;
+    font-size: 14px;
+    color: var(--clr-darkest);
+    background: var(--clr-light);
+}

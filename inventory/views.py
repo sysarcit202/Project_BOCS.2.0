@@ -3,28 +3,24 @@ from django.shortcuts import render
 # Create your views here.
 def inventory(request):
     context = {
-        'title': 'Project_BOCS | Inventory',
-        'navtitle': 'INVENTORY',
+        'title': 'Inventory'
     }
     return render(request, 'inventory/inventory.html', context)
 
 def donor(request):
     context = {
-        'title': 'Project_BOCS | Donor',
-        'navtitle': 'DONOR',
+        'title': 'Donor'
     }
     return render(request, 'inventory/donor.html', context)
 
 def instock(request):
     context = {
-        'title': 'Project_BOCS | In-Stock',
-        'navtitle': 'IN-STOCK',
+        'title': 'In-Stock'
     }
     return render(request, 'inventory/instock.html', context)
 
 def used(request):
     context = {
-        'title': 'Project_BOCS | Used',
-        'navtitle': 'USED',
+        'title': 'Used'
     }
     return render(request, 'inventory/used.html', context)

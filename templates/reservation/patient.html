@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,79 +7,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content=""> 
-    <title>TryWithMe | BOCS - Patient</title>
+    <title>Project_BOCS | {{ title }}</title>
 
     <!-- REFERENCES -->
-    <link rel="stylesheet" href="assests/css/patient_style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/patient_style.css' %}">
 
     <!-- FAVICONS -->
     <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
     <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
 
-    <script src={% static 'assests/js/dashboard.js' %}  defer></script>
+    <script src="{% static 'assets/js/dashboard.js' %}"  defer></script>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="dashboard.html">
-                <img src="assests/img/BOCS Logo Banner.png" class="img_bocs">
+            <a href= "{% url 'dashboard' %}">
+                <img src="{% static 'assets/img/BOCS Logo Banner.png' %}" class="img_bocs">
             </a>
             <ul class="links">
                 <li class="link">
-                    <a href="inventory.html" class="link-item">Inventory</a>
+                    <a href="{% url 'inventory' %}" class="link-item">Inventory</a>
                 </li>
                 <li class="link">
-                    <a href="colndistrib.html" class="link-item">Collect & Distribution</a>
+                    <a href="{% url 'colndistrib' %}" class="link-item">Collect & Distribution</a>
                 </li>
                 <li class="link">
-                    <a href="reservation.html" class="link-item">Reservation</a>
+                    <a href="{% url 'reservation' %}" class="link-item active">Reservation</a>
                 </li>
                 <li class="link">
-                    <a href="transcription.html" class="link-item">Transcription Record</a>
+                    <a href="{% url 'transcription' %}" class="link-item">Transcription Record</a>
                 </li>
                 <li class="link">
-                    <a href="sumrep.html" class="link-item">Summary Report</a>
+                    <a href="{% url 'sumrep' %}" class="link-item">Summary Report</a>
                 </li>
             </ul>
-            <img src="assests/img/user.jpg" class="img_user menuBar" onclick="toggleMenu()">
+            <img src="{% static 'assets/img/aira.jpg' %}" class="img_user menuBar" onclick="toggleMenu()">
         </nav>
     </header>
     <section class="mini-nav">
         <nav class="nav2">
-            <a href="reservation.html"  class="icon-link img_backIcon">
-                <img src="assests/img/arrow_back.png">
+            <a href="{% url 'reservation' %}"  class="icon-link img_backIcon">
+                <img src="{% static 'assets/img/arrow_back.png' %}">
             </a>
             <h1 class="title">
-                PATIENT
+                {{ title }}
             </h1>
-            <a href=""  class="icon-link img_changeIcon">
-                <img src="assests/img/change_circle.png">
-            </a>
-            <a href="dashboard.html" class="icon-link img_homeIcon">
-                <img src="assests/img/home.png">
+            <div class="icon-link img_changeIcon" onclick="changeContent()">
+                <img src="{% static 'assets/img/change_circle.png' %}">
+            </div>
+            <a href="{% url 'dashboard' %}" class="icon-link img_homeIcon">
+                <img src="{% static 'assets/img/home.png' %}">
             </a>
         </nav>
     </section>
     <main class="main">
-        <img src="assests/img/NCH Logo.png" class="img_nch">
-
+        <img src=" {% static 'assets/img/NCH Logo.png' %}" class="img_nch">
         <section class="sub_wrap hide" id="toggleMenu" >
             <div class="sub" id="menu">
                 <button type="submit" class="close" onclick="toggleMenu()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <!-- <img src="assests/img/close.png" class=""> -->
                 <div class="user_info">
-                    <img src="assests/img/user.jpg" class="img_user--">
+                    <img src="{% static 'assets/img/aira.jpg' %}" class="img_user--">
                     <h2>Doe, John Micheal V.<hr></h2>
                     <p>MedTech</p>
                     <p>123456789</p>
                     <hr>
-                    <a href="update.html">
-                        <button type="button" class="update_btn"><span><img src="assests/img/edit_square.png" class="icon"></span>Update Profile</button>
+                    <a href="{% url 'update' %}">
+                        <button type="button" class="update_btn"><span><img src="{% static 'assets/img/edit_square.png' %}" class="icon"></span>Update Profile</button>
                     </a>
-                    <a href="login.html">
-                        <button type="button" class="logout_btn"><span><img src="assests/img/logout.png" class="icon"></span>Log Out</button>
+                    <a href="{% url 'signout' %}">
+                        <button type="button" class="logout_btn"><span><img src="{% static 'assets/img/logout.png' %}" class="icon"></span>Log Out</button>
                     </a>
                 </div>
             </div>

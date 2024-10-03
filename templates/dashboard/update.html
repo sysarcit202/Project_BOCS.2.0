@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content=""> 
+    <title>Project_BOCS | {{ title }}</title>
+    
+    <!-- REFERENCES -->
+    <link rel="stylesheet" href="{% static 'assets/css/update_style.css' %}">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+    <link rel="apple-touch-icon" type="image/png" href="{% static 'assets/img/BOCS Logo.png' %}">
+
+    <script src="{% static 'assets/js/update.js' %}" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img src="{% static 'assets/img/BOCS Logo Banner.png' %}" class="img_bocs">
+        </nav>
+    </header>
+    <main class="main">
+        <img src="{% static 'assets/img/NCH Logo.png'%}" class="img_nch">
+        <section class="container">
+            <form action="{% url 'dashboard' %}" class="form1" method="post">
+                <div class="input-group1">
+                    <img src="{% static 'assets/img/user.jpg'%}" class="img_user" id="userImg">
+                    <label class="placeholder1" for="Uprofpic">Upload Image</label>                    
+                    <input type="file" class="input" id="Uprofpic" accept="image/*">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="Uname">
+                    <label class="placeholder" for="Uname">Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" class="input" id="Uemail">
+                    <label class="placeholder" for="Uemail">Email Address</label>
+                </div>
+                <div class="input-group">
+                    <select class="input" id="UjRole">
+                        <option value="" disabled selected>Select Job Role</option>
+                        <option value="MedTech">MedTech</option>
+                        <option value="Nurse">Nurse</option>
+                        <option value="BloodBank Technician">BloodBank Technician</option>
+                    </select>
+                    <label class="placeholder" for="UjRole">Job Role</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input" id="UidNum">
+                    <label class="placeholder" for="UidNum">ID Number</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" class="input" id="Upass">
+                    <label class="placeholder" for="Upass">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" class="input" id="UrPass">
+                    <label class="placeholder" for="UrPass">Password Verification</label>
+                </div>
+                <a href="{% url 'dashboard' %}">
+                    <input type="button" value="CANCEL">
+                </a>
+                <input type="submit" value="SUBMIT">
+            </form>
+        </section>
+    </main>
+</body>
+</html>
