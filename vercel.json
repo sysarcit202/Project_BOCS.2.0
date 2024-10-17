@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "Project_BOCS/wsgi.py"
+      "dest": "Project_BOCS/main/wsgi.py"
     }
   ]
 }
