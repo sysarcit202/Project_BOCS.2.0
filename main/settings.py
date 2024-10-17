@@ -22,9 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')  # Use an environment variable
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() == 'true'
+print(f"DEBUG mode is set to: {DEBUG}")
+print("Database User:", os.getenv('DB_USER'))
 
-ALLOWED_HOSTS = ['project-bocs-2-0-96xeprixz-lovelaces-projects-ed1e81f2.vercel.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','project-bocs-2-0-96xeprixz-lovelaces-projects-ed1e81f2.vercel.app']
 
 APPEND_SLASH = True
 
@@ -90,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.getenv('DB_NAME', 'bocsdb'),
         'USER': os.getenv('DB_USER', 'root'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'your-password'),  # Do not hardcode passwords
+        'PASSWORD': os.getenv('DB_PASSWORD', 'BOCScapsys22@#12345'),  
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '3306'),
         'OPTIONS': {
