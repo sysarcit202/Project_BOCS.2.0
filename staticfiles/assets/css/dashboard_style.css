@@ -1,0 +1,270 @@
+@import url('main.css');
+
+/* GENERAL */
+body{
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--ff-primary);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+/* HEADER */
+.header{    
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--clr-light);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 999;
+}
+
+.nav{
+  height: 100%;
+  padding: .5rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.img_bocs{
+  height: 5vw;
+  padding: 5px 2px;
+}
+
+.img_user{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 2.5vw;
+  height: 2.5vw;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2.5px solid var(--clr-darkest);
+  cursor: pointer;
+  margin: 30px;
+}
+
+nav ul{
+  width: 100%;
+  text-align: center;
+}
+
+nav ul li{
+  max-width: 100px;
+  display: inline-block;
+  margin: 1rem 4rem;
+  position: relative;
+  list-style: none;
+  font-size: var(--fs-body);
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.active{
+  color: var(--clr-darkestI);
+  font-weight: 500; 
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--clr-darkest);
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+nav ul li a{
+  color: var(--clr-lightdark);
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: var(--clr-darkestI);
+  font-weight: 500;
+}
+
+nav ul li a::after{
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--clr-darkest);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after{
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.img_nch {
+  position: absolute;
+  top: 12rem;
+  z-index: 0;
+  opacity: .5;
+  filter: blur(5px);
+}
+
+section{
+  z-index: 1;
+}
+
+.hide{
+  display: none;
+}
+
+/* TOGGLED SECTION*/
+.sub_wrap{
+  width: 18rem;
+  height: fit-content;
+  margin-top: 10px;
+  position: absolute;
+  top: 6.6rem;
+  right: 1.5rem;
+  transition: all .5s;
+  color: var(--clr-darkest);
+}
+
+.sub{
+  width: 100%;
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-light);
+  border-radius: 1.5rem;
+}
+
+.sub .close{
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  width: 1rem;
+  height: 1rem;
+  font-size: 2.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  
+}
+
+
+.user_info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+}
+
+.user_info h2{
+  font-weight: 700;
+  font-size: larger;
+}
+
+hr{
+  height: 3px;
+  margin-bottom: .5rem;
+  background-color: var(--clr-darkest);
+  border: none;
+  border-radius: 1rem;
+  font-weight: 100;
+}
+
+.user_info p{
+  font-size: small;
+  margin: .1rem;
+}
+
+.user_info .img_user--{
+  width: 3.5vw;
+  height: 3.5vw;
+  object-fit: cover;
+  margin: 1rem 1rem .2rem;
+  border-radius: 50%;
+  border: .3rem solid var(--clr-darkest);
+}
+
+.user_info a{
+  text-decoration: none;
+}
+
+.user_info a button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 2rem;
+  border: none;
+  border-radius: 10rem;
+  color: var(--clr-light);
+  font-size: x-small;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+
+.icon{
+  height: 1rem;
+  margin-right: .3rem;
+}
+
+.user_info a .update_btn{
+  margin: 1rem .5rem .5rem; 
+  background-color: var(--clr-darkest);
+}
+
+.user_info a .logout_btn{
+  margin: .5rem .5rem 1rem; 
+  background-color: var(--clr-lightdark);
+  width: 13rem;
+}
+
+/* MAIN */
+.main{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-darkest);
+  color: var(--clr-light);
+}
+
+.img_blood{
+  height: 12vw;
+  margin: 2rem;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: .5rem;
+}
+
+.greeting div p{
+  font-size: 2rem;
+  letter-spacing: .3rem;
+  margin-bottom: 1rem;
+}
+
+.greeting div h1{
+  font-size: 3.5rem;
+}
+

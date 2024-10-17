@@ -28,6 +28,7 @@
         <img src="{% static 'assets/img/NCH Logo.png'%}" class="img_nch">
         <section class="container">
             <form action="{% url 'dashboard' %}" class="form1" method="post">
+                {% csrf_token %}
                 <div class="input-group1">
                     <img src="{% static 'assets/img/user.jpg'%}" class="img_user" id="userImg">
                     <label class="placeholder1" for="Uprofpic">Upload Image</label>                    

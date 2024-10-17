@@ -11,7 +11,7 @@ from django.db import transaction, IntegrityError
 from django.conf import settings
 from .tokens import generate_token
 from .models import User
-from django.shortcuts import render
+from django.shortcuts import render     
 
 from django.contrib.auth.views import (
     PasswordResetView,
@@ -45,6 +45,7 @@ def signup(request):
 
     if request.method == 'POST':
         uemp_id = request.POST.get('UempId', None)
+        
         fName = request.POST['Uname']
         email = request.POST['Uemail']
         jobRole = request.POST['UjRole']

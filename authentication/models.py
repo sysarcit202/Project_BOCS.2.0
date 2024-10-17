@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class User(models.Model):
     UempId = models.CharField(max_length=20)
@@ -8,6 +9,8 @@ class User(models.Model):
     UidNum = models.CharField(max_length=20)
     Upass = models.CharField(max_length=20)
     UrPass = models.CharField(max_length=20)
+    UDateJoined = models.DateTimeField(default=timezone.now)
+    UPhoto = models.ImageField(upload_to='photos/', null=True, blank=True) 
 
     class Meta:
         db_table = 'user'
