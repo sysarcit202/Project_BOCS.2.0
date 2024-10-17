@@ -24,7 +24,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')  # Use an
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['project-bocs-2-0-git-main-lovelaces-projects-ed1e81f2.vercel.app']
+ALLOWED_HOSTS = ['project-bocs-2-0-96xeprixz-lovelaces-projects-ed1e81f2.vercel.app']
 
 APPEND_SLASH = True
 
